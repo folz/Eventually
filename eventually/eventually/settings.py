@@ -1,5 +1,6 @@
 # Global settings for eventually project.
 import os
+import dj_database_url
 
 PROJECT_DIR = os.path.dirname(__file__)
 PUBLIC_DIR = os.path.join(PROJECT_DIR, 'public')
@@ -144,6 +145,8 @@ INSTALLED_APPS = (
 AUTH_PROFILE_MODULE = 'eventually.UserProfile'
 
 ACCOUNT_ACTIVATION_DAYS = 3
+
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
