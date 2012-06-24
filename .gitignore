@@ -1,6 +1,6 @@
 eventually/eventually/public/static/
 eventually/eventually/public/media/
-database.db
+eventually.db
 initial_data.json
 *.geany
 
