@@ -3,7 +3,7 @@ window.Router = Backbone.Router.extend({
     routes: {
         "": "home",
         "contact": "contact",
-        "employees/:id": "employeeDetails"
+        "events/:id": "eventDetails"
     },
 
     initialize: function () {
@@ -37,20 +37,20 @@ window.Router = Backbone.Router.extend({
         this.headerView.select('contact-menu');
     },
 
-    employeeDetails: function (id) {
-        var employee = new Employee({id: id});
-        employee.fetch({
+    eventDetails: function (id) {
+        var event = new Event({id: id});
+        event.fetch({
             success: function (data) {
-                // Note that we could also 'recycle' the same instance of EmployeeFullView
+                // Note that we could also 'recycle' the same instance of EventFullView
                 // instead of creating new instances
-                $('#content').html(new EmployeeView({model: data}).render().el);
+                $('#content').html(new EventView({model: data}).render().el);
             }
         });
     }
 
 });
 
-templateLoader.load(["HomeView", "ContactView", "HeaderView", "EmployeeView", "EmployeeSummaryView", "EventListItemView"],
+templateLoader.load(["HomeView", "ContactView", "HeaderView", "EventView", "EventSummaryView", "EventListItemView"],
     function () {
         app = new Router();
         Backbone.history.start();

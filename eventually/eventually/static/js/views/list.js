@@ -1,4 +1,4 @@
-window.EmployeeListView = Backbone.View.extend({
+window.EventListView = Backbone.View.extend({
 
     tagName:'ul',
 
@@ -7,15 +7,15 @@ window.EmployeeListView = Backbone.View.extend({
     initialize:function () {
         var self = this;
         this.model.bind("reset", this.render, this);
-        this.model.bind("add", function (employee) {
-            $(self.el).append(new EventListItemView({model:employee}).render().el);
+        this.model.bind("add", function (event) {
+            $(self.el).append(new EventListItemView({model:event}).render().el);
         });
     },
 
     render:function () {
         $(this.el).empty();
-        _.each(this.model.models, function (employee) {
-            $(this.el).append(new EventListItemView({model:employee}).render().el);
+        _.each(this.model.models, function (event) {
+            $(this.el).append(new EventListItemView({model:event}).render().el);
         }, this);
         return this;
     }

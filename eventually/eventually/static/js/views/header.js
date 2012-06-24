@@ -1,8 +1,8 @@
 window.HeaderView = Backbone.View.extend({
 
     initialize: function () {
-        this.searchResults = new EmployeeCollection();
-        this.searchresultsView = new EmployeeListView({model: this.searchResults, className: 'dropdown-menu'});
+        this.searchResults = new EventCollection();
+        this.searchresultsView = new EventListView({model: this.searchResults, className: 'dropdown-menu'});
     },
 
     render: function () {

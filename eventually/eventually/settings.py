@@ -146,7 +146,10 @@ AUTH_PROFILE_MODULE = 'eventually.UserProfile'
 
 ACCOUNT_ACTIVATION_DAYS = 3
 
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+DATABASES = {
+    'default':
+        dj_database_url.config(default='postgres://localhost')
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
