@@ -1,6 +1,6 @@
 window.Event = Backbone.Model.extend({
 
-    urlRoot:"/api/v1/event",
+    urlRoot:"/api/v1/event/",
 
     initialize:function () {
         this.reports = new EventCollection();
@@ -13,11 +13,10 @@ window.EventCollection = Backbone.Collection.extend({
 
     model: Event,
 
-    url:"/api/v1/event",
+    url:"/api/v1/event/",
 
-    findByName:function (key) {
-        var url = '/api/v1/event';
-        console.log('findByName: ' + key);
+    findByName:function () {
+        var url = '/api/v1/event/';
         var self = this;
         $.ajax({
             url:url,

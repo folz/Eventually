@@ -2,13 +2,10 @@ window.Router = Backbone.Router.extend({
 
     routes: {
         "": "home",
-        "contact": "contact",
         "events/:id": "eventDetails"
     },
 
     initialize: function () {
-        this.headerView = new HeaderView();
-        $('.header').html(this.headerView.render().el);
 
         // Close the search dropdown on click anywhere in the UI
         $('body').click(function () {
@@ -17,18 +14,7 @@ window.Router = Backbone.Router.extend({
     },
 
     home: function () {
-        // Since the home view never changes, we instantiate it and render it only once
         $("#content").html(new HomeView().render().el);
-        this.headerView.select('home-menu');
-    },
-
-    contact: function () {
-        if (!this.contactView) {
-            this.contactView = new ContactView();
-            this.contactView.render();
-        }
-        $('#content').html(this.contactView.el);
-        this.headerView.select('contact-menu');
     },
 
     eventDetails: function (id) {
@@ -44,7 +30,7 @@ window.Router = Backbone.Router.extend({
 
 });
 
-templateLoader.load(["HomeView", "HeaderView", "EventView", "EventSummaryView", "EventListItemView"],
+templateLoader.load(["HomeView", "EventView", "EventSummaryView", "EventListItemView"],
     function () {
         app = new Router();
         Backbone.history.start();
