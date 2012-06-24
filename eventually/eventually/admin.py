@@ -2,10 +2,10 @@ from django.contrib import admin
 
 from eventually.models import *
 
-class AttendanceInline(admin.StackedInline):
+class AttendingInline(admin.StackedInline):
     model = UserProfile.events.through
 
 class UserProfileAdmin(admin.ModelAdmin):
-    inlines = (AttendanceInline,)
+    inlines = (AttendingInline,)
 
 admin.site.register(UserProfile, UserProfileAdmin)
