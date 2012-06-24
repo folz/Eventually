@@ -128,6 +128,8 @@ INSTALLED_APPS = (
     'registration',
     
     # Eventually
+    'eventually',
+    'events',
 )
 
 # A sample logging configuration. The only tangible logging
