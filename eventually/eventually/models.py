@@ -8,7 +8,11 @@ from events.models import *
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     
-    events = models.ManyToManyField('events.Event')
+    events = models.ManyToManyField('events.Event', through='events.Attendance')
+    sessions = models.ManyToManyField('events.Session')
+    
+    def __unicode__(self):
+        return str(self.user)
 
 def create_user_profile(sender, instance, created, **kwargs):
     if created:

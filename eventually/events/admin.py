@@ -1,10 +1,20 @@
 from django.contrib import admin
 
-from eventually.models import *
 from events.models import *
 
-admin.site.register(UserProfile)
+class SessionInline(admin.StackedInline):
+    model = Session
+    ordering = ["start"]
 
-admin.site.register(Event)
-admin.site.register(Venue)
-admin.site.register(Session)
+class VenueAdmin(admin.ModelAdmin):
+    inlines = (SessionInline,)
+
+class VenueInline(admin.StackedInline):
+    model = Venue
+
+class EventAdmin(admin.ModelAdmin):
+    inlines = (VenueInline,)
+
+admin.site.register(Event, EventAdmin)
+admin.site.register(Attendance)
+admin.site.register(Venue, VenueAdmin)

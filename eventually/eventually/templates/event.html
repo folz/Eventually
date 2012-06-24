@@ -1,0 +1,18 @@
+{% extends "loggedin.html" %}
+
+{% block header %}
+
+<h1>{{ event.name }}</h1>
+
+{% endblock %}
+
+
+{% block content %}
+
+{% for venue in event.venues %}
+    {% for session in venue.sessions %}
+        {{ session }}
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}

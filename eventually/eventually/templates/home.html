@@ -1,9 +1,18 @@
 {% extends "loggedin.html" %}
 
+{% block header %}
+
+<h1>Discover events</h1>
+
+{% endblock %}
+
+
 {% block content %}
 
-<h1>{{ req.path }}</h1>
+{{ search_form.as_p }}
 
-<p></p>
+{% for event in events %}
+    {% include "ui/event-blurb.html" %}
+{% endfor %}
 
 {% endblock %}

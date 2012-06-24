@@ -2,3 +2,7 @@ body
 {
     margin-top: 60px;
 }
+
+.event-blurb {
+    border-bottom: 1px solid #f3f3f3;
+}

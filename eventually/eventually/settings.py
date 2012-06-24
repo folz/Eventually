@@ -133,6 +133,7 @@ INSTALLED_APPS = (
     #Third-party
     'compressor',
     'registration',
+    'south',
     
     # Eventually
     'eventually',
