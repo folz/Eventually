@@ -3,30 +3,24 @@
 
 - python >= 2.5
 - pip
-- virtualenv/wrapper (optional)
+- virtualenv
 
 ## Installation ##
 ### Creating the environment ###
 Create a virtual python environment for the project.
-If you're not using virtualenv or virtualenvwrapper you may skip this step.
-
-#### For virtualenvwrapper ####
-```bash
-mkvirtualenv --no-site-packages eventually-env
-```
+If you're not using virtualenv you may skip this step.
 
 #### For virtualenv ####
 ```bash
-virtualenv --no-site-packages eventually-env
-cd eventually-env
-source bin/activate
+virtualenv venv --distribute
+source venv/bin/activate
 ```
 
 ### Clone the code ###
 Obtain the url to your git repository.
 
 ```bash
-git clone <URL_TO_GIT_RESPOSITORY> eventually
+git clone git@github.com:folz/Eventually.git eventually
 ```
 
 ### Install requirements ###
