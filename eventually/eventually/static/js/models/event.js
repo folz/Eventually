@@ -3,8 +3,6 @@ window.Event = Backbone.Model.extend({
     urlRoot:"/api/v1/event/",
 
     initialize:function () {
-        this.reports = new EventCollection();
-        this.reports.url = '/api/v1/event/' + this.id + '/reports';
     }
 
 });

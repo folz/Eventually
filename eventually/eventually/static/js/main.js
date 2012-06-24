@@ -30,7 +30,7 @@ window.Router = Backbone.Router.extend({
 
 });
 
-templateLoader.load(["HomeView", "EventView", "EventSummaryView", "EventListItemView"],
+templateLoader.load(["HomeView", "EventView", "EventListItemView"],
     function () {
         app = new Router();
         Backbone.history.start();
