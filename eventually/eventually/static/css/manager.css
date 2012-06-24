@@ -65,31 +65,6 @@
 	padding-top:5px;
 }
 
-.btn{
-	display: inline-block;
-	margin-left: 1%;
-	margin-right: 1%;
-	box-sizing: border-box;
-	text-align: center;	
-	border-radius:6px;
-	background-color:#ccc;
-	font-size:20px;
-	margin-top:5px;
-	padding-top:3px;
-	padding-bottom:3px;	
-	border:1px solid #333;
-	color:#666;
-}
-
-.btn-short{
-	width: 48%;
-
-}
-
-.btn-long{
-	width: 98%;
-}
-
 .body_cont {
 	margin-top:80px;
 }
@@ -116,5 +91,19 @@
 
 .top-bar-management h1{
 	color: white;
+}
+
+ul {
+	list-style-type:none;
+	left:0;
+	margin-left:0;
+}
+li.category {
+	margin-left:-30px;
+	width: 300px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color:#fff;
+	padding: 10px;
 }
 

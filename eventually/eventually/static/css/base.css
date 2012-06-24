@@ -130,3 +130,32 @@
   .small {
     font-size:14px;
   }
+
+.btn {
+  display: inline-block;
+  margin-left: 3px;
+  margin-right: 3px;
+  text-align: center; 
+  border-radius:6px;
+  background-color:#bbb;
+  font-size:12px;
+  margin-top:5px;
+  padding-top:3px;
+  padding-bottom:3px; 
+  /*border:1px solid #333;*/
+  color:#000;
+  border: 1px solid #bbb;
+}
+
+.btn:hover {
+  border: 1px solid #000;
+}
+
+.btn-short{
+  width: 70px;
+
+}
+
+.btn-long{
+  width: 110px;
+}

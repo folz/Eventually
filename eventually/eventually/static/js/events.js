@@ -167,6 +167,9 @@ function renderCalendar() {
     return proc_arr;
 }
 
+var karan_names = ['Sponsor Talks','Singly Office Hours','Career Expo','Networking Sessions','Lunch','Dinner','Breakfast']
+var karan_venues = ['Dell Lounge','Isis Lounge','Canberk Conf Room','The Hideout','Danforth Lounge','Cafeteria','Cafeteria']
+
 function renderDay(proc_arr) {
 
     var calendar = document.getElementById('events');
@@ -186,9 +189,10 @@ function renderDay(proc_arr) {
 
         var title = document.createElement('span');
         title.id = 'title';
-        title.appendChild(document.createTextNode('Sample Event'));
+        var random_i = Math.floor(Math.random(0,7)*7);
+        title.appendChild(document.createTextNode(karan_names[random_i]));
         event.appendChild(title);
-        event.appendChild(document.createTextNode('Sample Event - ' + proc_arr[cur_e].id)); //text
+        event.appendChild(document.createTextNode(karan_names[random_i] +' at ' + karan_venues[random_i])); //text
         calendar.appendChild(event);
     }
 }

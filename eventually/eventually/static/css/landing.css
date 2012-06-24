@@ -10,10 +10,10 @@
 
 .bottom-bar {
   position:absolute;
-  bottom: 0px;
+  top: 580px;
   left: 0px;
   width: 100%;
-  height: 250px;
+  height: 230px;
   background-color: #aadc2d;
 }
 
@@ -73,19 +73,45 @@ h3 {
 	position: absolute;
 }
 
-.event-list ul li {
+ul.event-list li {
 	font-size:14px;
 	font-weight:bold;
 	padding:7px;
 }
 
-.event-list ul li.selected {
+ul.event-list li.selected {
 	background-color: #aadc2d;
 	border-radius: 3px;
 }
 
-.altlogin {
-  text-decoration: underline;
-  color: #3333aa;
-  font-size: 12px;
+.p_right{
+  height:580px;
+}
+
+.event-details{
+  width: 100%;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid 
+  #999;
+  line-height: 1.7em;
+}
+
+.organizer-list li{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+img{
+  width:auto;
+  margin-left: 80px;
+  zoom:.8;
+}
+
+.powered-by{
+  margin-top:20px;
+}
+
+.powered-by h3 {
+  font-weight: 800;
 }
