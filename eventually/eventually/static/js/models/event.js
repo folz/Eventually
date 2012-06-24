@@ -2,9 +2,6 @@ window.Event = Backbone.Model.extend({
 
     urlRoot:"/api/v1/event/",
 
-    initialize:function () {
-    }
-
 });
 
 window.EventCollection = Backbone.Collection.extend({

@@ -1,23 +1,53 @@
-<div class="p_left">
-    <h1>Eventially</h1>
-    <h2>Organize. Attend. Enjoy.</h2>
-    <h3>
-        Eventially makes it easy to attend the large conferences, festivals, and conventions you love.  Sign in, register for
-        breakout sessions or shows, and keep up with event
-        announcements and live chatter via Twitter™.
-    </h3>
-</div>
-<div class="landingbg p_right">
-    <div class="event-list">
-    <% if (USER !== "AnonymousUser") { %>
-        <p>Welcome, <%= USER %></p>
-    <% } %>
-    <h4>Events Around You</h4>
-    <div id="events">
+<div class="top-bar-huge"></div>
+<div class="main-container">
+    <div class="p_left">
+        <h1>Eventially</h1>
+        <h2>Organize. Attend. Enjoy.</h2>
+        <h3>
+            Eventially makes it easy to attend the large conferences, festivals, and conventions you love.  Sign in, register for
+            breakout sessions or shows, and keep up with event
+            announcements and live chatter via Twitter.
+        </h3>
     </div>
-    <% if (USER === "AnonymousUser") { %>
-    <div class="social"><img src="/static/img/facebook.png"/><img src="/static/img/twitter.png"/></div>
-        <a href="/accounts/login/" class="altlogin">Join with Eventially</a>
-    <% } %>
+    <div class="landingbg p_right">
+        <ul class="attendee-list event-list styled-list">
+            <% if (USER !== "AnonymousUser") { %>
+                <p>Welcome, <%= USER %></p>
+            <% } else {%>
+                <p>Howdy, stranger</p>
+            <% } %>
+            <h4 style="font-size: 23px /* TODO clowny */">Events Around You</h4>
+            <div id="events">
+            </div>
+            <div class="social">
+                <a href="eventpage.html">
+                    <img src="/static/img/facebook.png"/>
+                    <img src="/static/img/twitter.png"/>
+                </a>
+                <img class="organizer-link" src="/static/img/organizer.png"/>
+            </div>
+        </ul>    
+        <ul style="display:none" class="organizer-list event-list styled-list">
+            <h4>Event Details</h4>
+            <li ><input class="event-details" type="text" placeholder="Name"></input></li>
+            <li ><input class="event-details" type="text" placeholder="Location"></input></li>
+            <li ><input class="event-details" type="text" placeholder="Time"></input></li>
+            <div class="social">
+                <img src="/static/img/facebook.png"/>
+                <img src="/static/img/twitter.png"/>
+                <img class="attendee-link" src="/static/img/organizer.png"/>
+            </div>
+        </ul>    
+    </div>
+</div>
+<div class="bottom-bar">
+    <div class="main-container powered-by">
+        <h3>Powered by...</h3><img src="https://dev.singly.com/images/singly-logo_300.png" style="
+                border-right: 4px solid #666;
+                margin-left: 0px;
+                padding-right: 80px;
+            ">
+        <img src="http://angelhack.com/assets/logos/logo-white.png" style="
+            ">
     </div>
 </div>

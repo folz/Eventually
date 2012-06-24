@@ -1,24 +1,25 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 
-{% block extra_css %}
-
-<link rel="stylesheet" href="{% static 'css/landing.css' %}">
-
-{% endblock %}
-
-
 {% block extra_js %}
 
 <script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'js/models/event.js' %}"></script>
 
-
 <script type="text/javascript" src="{% static 'js/views/home.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/views/list.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/views/details.js' %}"></script>
 
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+<script type="text/javascript">
+    // TODO clowny
+    $(".nearby-event").live('click', function() {
+        console.log($(this));
+        $(this).addClass("selected");
+        $(this).siblings().removeClass("selected");
+    });
+</script>
 
 {% endblock %}

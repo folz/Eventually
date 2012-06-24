@@ -1,9 +1,5 @@
 window.EventListView = Backbone.View.extend({
 
-    tagName:'ul',
-
-    className:'events styled-list',
-
     initialize:function () {
         this.model.bind("reset", this.render, this);
         this.model.bind("add", function (event) {
@@ -20,12 +16,15 @@ window.EventListView = Backbone.View.extend({
         $('#events').append(this.el);
         console.log('[EventListView] ending render()', this);
         return this;
-    }
+    },
+    
 });
 
 window.EventListItemView = Backbone.View.extend({
 
     tagName:"li",
+    
+    className: "nearby-event",
 
     initialize:function () {
         this.model.bind("change", this.render, this);
@@ -35,6 +34,6 @@ window.EventListItemView = Backbone.View.extend({
     render:function () {
         $(this.el).html(this.template(this.model.toJSON()));
         return this;
-    }
+    },
 
 });

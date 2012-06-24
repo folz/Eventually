@@ -13,7 +13,6 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     
     {% compress css %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/chosen.css' %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/base.css' %}" />
     {% block extra_css %}{% endblock %}
     {% endcompress %}
@@ -24,24 +23,22 @@
     </script>
 </head>
 
-<body>
+<body id="landingPage">
+    <div id="content">
     
-    <div class="top-bar-huge"></div>
-    <div class="main-container" id="content">
-        {% block content %}{% endblock %}
+    {% block content %}{% endblock %}
+    
     </div>
-    <div class="bottom-bar"></div>
     
     {% compress js %}
     <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/jquery-ui.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/lib/bootstrap.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/lib/underscore.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/lib/backbone.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/backbone-tastypie.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/lib/chosen.jquery.js' %}"></script>
-    <script type="text/javascript">
-        $("select").chosen();
-    </script>
+    
     {% block extra_js %}{% endblock %}
     {% endcompress %}
 </body>
