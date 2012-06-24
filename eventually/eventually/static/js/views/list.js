@@ -2,7 +2,7 @@ window.EventListView = Backbone.View.extend({
 
     tagName:'ul',
 
-    className:'nav nav-list',
+    className:'events styled-list',
 
     initialize:function () {
         var self = this;
