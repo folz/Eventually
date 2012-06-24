@@ -2,7 +2,8 @@ window.Router = Backbone.Router.extend({
 
     routes: {
         "": "home",
-        "events/:id": "eventDetails"
+        "events/:id": "eventDetails",
+        "manage/:id": "manage"
     },
 
     home: function () {
@@ -14,6 +15,15 @@ window.Router = Backbone.Router.extend({
         event.fetch({
             success: function (data) {
                 $('#content').html(new EventView({model: data}).render().el);
+            }
+        });
+    },
+    
+    manage: function(id) {
+        var event = new Event({id: id});
+        event.fetch({
+            success: function(data) {
+                $('#content').html(new ManageView({model: data}).render().el);
             }
         });
     }

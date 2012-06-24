@@ -2,6 +2,7 @@ window.ManageView = Backbone.View.extend({
 
     initialize:function () {
         console.log("[ManageView] initialize event", this.model.get('id'));
+        $("body").attr("id", "managerPage");
     },
 
     render: function () {
