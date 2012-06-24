@@ -14,9 +14,3 @@ def home(req):
         return render(req, "home.html", locals())
     else:
         return render(req, "splash.html", locals())
-
-@login_required
-def event(req, eid):
-    event = get_object_or_404(Event, pk=eid)
-    
-    return render(req, "event.html", locals())

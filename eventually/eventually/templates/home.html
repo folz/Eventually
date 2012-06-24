@@ -1,18 +1,19 @@
 {% extends "loggedin.html" %}
+{% load staticfiles %}
 
-{% block header %}
+{% block extra_js %}
 
-<h1>Discover events</h1>
+<script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
 
-{% endblock %}
+<script type="text/javascript" src="{% static 'js/models/event.js' %}"></script>
 
 
-{% block content %}
+<script type="text/javascript" src="{% static 'js/views/header.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/views/home.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/views/contact.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/views/list.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/views/details.js' %}"></script>
 
-{{ search_form.as_p }}
-
-{% for event in events %}
-    {% include "ui/event-blurb.html" %}
-{% endfor %}
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
 {% endblock %}

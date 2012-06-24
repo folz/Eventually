@@ -15,8 +15,6 @@ urlpatterns = patterns('',
     
     url(r'^$', 'events.views.home', name='home'),
     
-    url(r'^event/(?P<eid>\d+)/', 'events.views.event', name='event'),
-    
     
     # API
     

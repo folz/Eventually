@@ -20,41 +20,30 @@
 </head>
 
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand" href="{% url 'home' %}">{{ site.name }}</a>
-                {% block navbar %}
-                <ul class="nav pull-right">
-                    <li><a href="{% url 'auth_login' %}">Log in</a></li> 
-                    <li><a href="{% url 'registration_register' %}">Register</a></li>
-                </ul>
-                {% endblock %}
-            </div> <!-- .container -->
-        </div> <!-- .navbar-inner -->
-    </div> <!-- .navbar.navbar-fixed-top -->
+    <div class="header">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="{% url 'home' %}">{{ site.name }}</a>
+                    {% block navbar %}
+                    <ul class="nav pull-right">
+                        <li><a href="{% url 'auth_login' %}">Log in</a></li> 
+                        <li><a href="{% url 'registration_register' %}">Register</a></li>
+                    </ul>
+                    {% endblock %}
+                </div> <!-- .container -->
+            </div> <!-- .navbar-inner -->
+        </div> <!-- .navbar.navbar-fixed-top -->
+    </div>
     <div class="container">
-        <div id="content" class="container">
+        <div class="container">
             <div class="row">
-                <div class="span2">
-                    {% block sidebar %}{% endblock %}
-                </div>
-                <div class="span10">
-                    {% if messages %}
-                        <div class="messages">
-                        {% for message in messages %}
-                            <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
-                                <a class="close" data-dismiss="alert" href="#">×</a>
-                                <p>{{ message }}</p>
-                            </div>
-                        {% endfor %}
-                        </ul>
-                    {% endif %}
-                    <div class="page-header">
-                        {% block header %}
-                        <h1>{{ url_name|capfirst }}</h1>
-                        {% endblock %}
-                    </div> <!-- .page-header -->
+                <div class="page-header">
+                    {% block header %}
+                    <h1>{{ url_name|capfirst }}</h1>
+                    {% endblock %}
+                </div> <!-- .page-header -->
+                <div id="content" class="span12">
                     {% block content %}{% endblock %}
                 </div> <!-- .span10 -->
             </div> <!-- .row -->
@@ -65,12 +54,12 @@
 
 
     {% compress js %}
-    <script type="text/javascript" src="{% static 'js/jquery-1.7.2.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/underscore.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/backbone.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.2.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/underscore.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/backbone.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/backbone-tastypie.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/chosen.jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/lib/chosen.jquery.js' %}"></script>
     <script type="text/javascript">
         $("select").chosen();
     </script>
