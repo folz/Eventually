@@ -9,10 +9,15 @@
 </div>
 <div class="landingbg p_right">
     <div class="event-list">
-    <h4>Around You</h4>
+    <% if (USER !== "AnonymousUser") { %>
+        <p>Welcome, <%= USER %></p>
+    <% } %>
+    <h4>Events Around You</h4>
     <div id="events">
     </div>
+    <% if (USER === "AnonymousUser") { %>
     <div class="social"><img src="/static/img/facebook.png"/><img src="/static/img/twitter.png"/></div>
-    <a href="/accounts/login/" class="altlogin">Join with Eventially</a>
+        <a href="/accounts/login/" class="altlogin">Join with Eventially</a>
+    <% } %>
     </div>
 </div>

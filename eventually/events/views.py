@@ -10,7 +10,4 @@ def home(req):
     events = Event.objects.filter(start__gte=datetime.today()).order_by('start')
     search_form = EventSearchForm()
     
-    if req.user.is_authenticated():
-        return render(req, "home.html", locals())
-    else:
-        return render(req, "splash.html", locals())
+    return render(req, "home.html", locals())
