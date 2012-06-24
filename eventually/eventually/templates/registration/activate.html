@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block title %}{{ block.super }} / Activated!{% endblock %}
+
+
+{% block content %}
+
+<h1>Account activation failed.</h1>
+
+<p>{{ activation_key }}</p>
+
+{% endblock %}
