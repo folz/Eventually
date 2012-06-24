@@ -8,7 +8,7 @@ from events.models import *
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     
-    events = models.ManyToManyField('events.Event', through='events.Attendance')
+    events = models.ManyToManyField('events.Event', through='events.Going')
     sessions = models.ManyToManyField('events.Session')
     
     def __unicode__(self):

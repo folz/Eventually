@@ -12,6 +12,17 @@ class Event(models.Model):
     def __unicode__(self):
         return self.name
 
+class Going(models.Model):
+    person = models.ForeignKey('eventually.UserProfile')
+    event = models.ForeignKey('Event')
+    
+    going = models.BooleanField()
+    registration_date = models.DateTimeField(auto_now_add=True)
+    
+    def __unicode__(self):
+        return "{0} is {1}going to {2}".format(
+            self.person, "" if self.going else "not ", self.event)
+
 class Venue(models.Model):
     event = models.ForeignKey('Event')
     name = models.CharField(max_length=127)
@@ -34,11 +45,10 @@ class Session(models.Model):
 
 class Attendance(models.Model):
     person = models.ForeignKey('eventually.UserProfile')
-    event = models.ForeignKey('Event')
+    session = models.ForeignKey('Session')
     
     attending = models.BooleanField()
-    registration_date = models.DateTimeField(auto_now_add=True)
     
     def __unicode__(self):
-        return "{0} is {1}going to {2}".format(
+        return "{0} is {1}attending {2}".format(
             self.person, "" if self.attending else "not ", self.event)
