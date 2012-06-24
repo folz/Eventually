@@ -1,37 +1,24 @@
 from datetime import datetime
 
 from django.db import models
+from django.contrib.auth.models import User
 
 pick = {'auto_now': False, 'auto_now_add': False}
 
 class Event(models.Model):
     name = models.CharField(max_length=127)
+    created_by = models.ForeignKey(User, related_name="creator")
+    administrators = models.ManyToManyField(User)
+    
     start = models.DateField(**pick)
     end = models.DateField(**pick)
     
     def __unicode__(self):
         return self.name
 
-class Going(models.Model):
-    person = models.ForeignKey('eventually.UserProfile')
-    event = models.ForeignKey('Event')
-    
-    going = models.BooleanField()
-    registration_date = models.DateTimeField(auto_now_add=True)
-    
-    def __unicode__(self):
-        return "{0} is {1}going to {2}".format(
-            self.person, "" if self.going else "not ", self.event)
-
-class Venue(models.Model):
-    event = models.ForeignKey('Event')
-    name = models.CharField(max_length=127)
-    
-    def __unicode__(self):
-        return "{0} - {1}".format(self.name, self.event.name)
-
 class Session(models.Model):
     name = models.CharField(max_length=127)
+    event = models.ForeignKey('Event')
     venue = models.ForeignKey('Venue')
     
     start = models.DateTimeField(**pick)
@@ -43,12 +30,9 @@ class Session(models.Model):
             self.start.strftime("%b %d %I:%M %p"),
             self.end.strftime("%b %d %I:%M %p"))
 
-class Attendance(models.Model):
-    person = models.ForeignKey('eventually.UserProfile')
-    session = models.ForeignKey('Session')
-    
-    attending = models.BooleanField()
+class Venue(models.Model):
+    name = models.CharField(max_length=127)
+    event = models.ForeignKey('Event')
     
     def __unicode__(self):
-        return "{0} is {1}attending {2}".format(
-            self.person, "" if self.attending else "not ", self.event)
+        return "{0} - {1}".format(self.name, self.event.name)

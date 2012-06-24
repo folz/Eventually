@@ -8,8 +8,8 @@ from events.models import *
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     
-    events = models.ManyToManyField('events.Event', through='events.Going')
-    sessions = models.ManyToManyField('events.Session')
+    events = models.ManyToManyField('events.Event', through='Going')
+    sessions = models.ManyToManyField('events.Session', through='Attending')
     
     def __unicode__(self):
         return str(self.user)
@@ -19,3 +19,25 @@ def create_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
 
 post_save.connect(create_user_profile, sender=User)
+
+
+class Going(models.Model):
+    person = models.ForeignKey('UserProfile')
+    event = models.ForeignKey('events.Event')
+    
+    going = models.BooleanField()
+    registration_date = models.DateTimeField(auto_now_add=True)
+    
+    def __unicode__(self):
+        return "{0} is {1}going to {2}".format(
+            self.person, "" if self.going else "not ", self.event)
+
+class Attending(models.Model):
+    person = models.ForeignKey('UserProfile')
+    session = models.ForeignKey('events.Session')
+    
+    attending = models.BooleanField()
+    
+    def __unicode__(self):
+        return "{0} is {1}attending {2}".format(
+            self.person, "" if self.attending else "not ", self.session)
