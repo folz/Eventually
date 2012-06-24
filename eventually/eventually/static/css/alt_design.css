@@ -1,0 +1,92 @@
+/* Handcrafted by Ilter Canberk  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Global Reset
+:: Canvas
+:: Event
+*/
+
+
+/*	--------------------------------------------------
+	Global Reset & Standards
+	-------------------------------------------------- */
+	html, body { margin: 0; padding: 0; }
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, img, small, strike, strong, em, sub, sup, tt, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td, section { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	ol, ul { list-style: none; }
+	
+	/* HTML5 Fixes */
+	header, section, nav, footer, article { display: block; }
+
+	body { 
+		background: #fff; 
+	    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	    font-weight: 300; 
+		font-size: 12px; 
+		line-height: 20px; 
+		text-shadow: 0 0 1px rgba(0,0,0,0.01); 
+		color: #333; 
+		position: relative; 
+		overflow-x: hidden;
+	}
+
+/*	--------------------------------------------------
+	Canvas
+	-------------------------------------------------- */
+  #canvas{
+    position:absolute; 
+    top:30px;
+    width: 600px;
+    height: 720px;
+    padding: 10px;
+    padding-top: 0px;
+    margin:0 auto;
+    left:50%; 
+    margin-left:-310px; 
+    border-color: #dedede;
+    border-width: 1px;
+    border-style: solid;
+  }
+ #events{
+ 	position:absolute;
+ 	width:600px;
+ 	left: 10px;
+ }
+
+
+  .hrs{
+    width: 100%;
+    height: 30px;
+    margin:0 auto;
+   	border-bottom-width: 1px;
+    border-bottom-color: #c8c8c8;
+    border-bottom-style: dotted;
+    font-size: 14px;
+  }
+
+  .half-hrs{
+    width: 100%;
+   	height: 30px;
+   	margin:0 auto;
+    font-size: 10px;
+    text-align: right;
+    border-bottom-width: 1px;
+    border-bottom-color: #a2a2a2;
+    border-bottom-style: solid;
+  }
+
+/*	--------------------------------------------------
+	Event
+	-------------------------------------------------- */
+  .event{
+    position: absolute;
+    background-color: #dadada;
+    zoom: 1;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    border-color: #3B5998;
+    border-left-style: solid;
+    border-left-width: 3px;
+  }

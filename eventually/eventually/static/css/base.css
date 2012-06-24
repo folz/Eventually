@@ -1,0 +1,132 @@
+/* Handcrafted by Ilter Canberk  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Global Reset
+:: Canvas
+:: Event
+*/
+
+  
+/*  --------------------------------------------------
+  Global Reset & Standards
+  -------------------------------------------------- */
+  @import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+
+  html {
+    height: 100%;
+  }
+
+  body { 
+    height: 100%;
+    background: #e5e4e4; 
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif, Tahoma;
+    font-weight: 300; 
+    font-size: 14px; 
+    line-height: 20px; 
+    color: #000; 
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  a{
+    text-decoration:none;
+    color: #686868; 
+  }
+
+  div.top-bar {
+    position: fixed;
+    width:100%;
+    height:5px;
+    top:0;
+    left:0;
+    background-color:#a11e5a;
+    border-bottom:1px solid #999;
+    z-index:200;
+  }
+
+  h1 {
+    color:#a11e5a;
+    font-size:36px;
+    font-family: 'Pontano Sans', Helvetica, sans-serif;
+    zoom: 1;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    display: inline-block;
+  }
+
+  h2 {
+    color:#a11e5a;
+    font-size:14px;
+    font-family: 'Pontano Sans', sans-serif;
+    display: inline-block;
+  }
+
+  h4 {
+    color:#a11e5a;
+    font-size:24px;
+    font-family: 'Pontano Sans', Helvetica, sans-serif;
+  }
+
+
+/*  --------------------------------------------------
+  Canvas
+  -------------------------------------------------- */
+  div.canvas {
+    position: relative;
+    width:100%;
+    height:350px;
+    text-align:center;
+    top:0;
+    display:inline-block;
+  }
+
+  div.main-container{
+    position:absolute;
+    height:100%;
+    top:0;
+    left:50%;
+    width:900px;
+    margin-left:-450px;
+    display: inline;
+  }
+
+  div.main-bar{
+    width:850px;
+    height:130px;
+    display:inline-block;
+  }
+
+  .p_left {
+    position: absolute;
+    width: 450px;
+  }
+
+  .p_right {
+    position: absolute;
+    width: 250px;
+    right:0px;
+  }
+
+  ul.styled-list {
+   list-style-type:none;
+  }
+
+  li {
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  .above {
+    z-index:100;
+  }
+
+  .small {
+    font-size:14px;
+  }

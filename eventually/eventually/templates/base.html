@@ -13,46 +13,25 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     
     {% compress css %}
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/bootstrap.css' %}" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/chosen.css' %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/base.css' %}" />
+    {% block extra_css %}{% endblock %}
     {% endcompress %}
+    
+    <script type="text/javascript">
+        USER = "{{ req.user }}";
+        SITE = "{{ site }}";
+    </script>
 </head>
 
 <body>
-    <div class="header">
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="brand" href="{% url 'home' %}">{{ site.name }}</a>
-                    {% block navbar %}
-                    <ul class="nav pull-right">
-                        <li><a href="{% url 'auth_login' %}">Log in</a></li> 
-                        <li><a href="{% url 'registration_register' %}">Register</a></li>
-                    </ul>
-                    {% endblock %}
-                </div> <!-- .container -->
-            </div> <!-- .navbar-inner -->
-        </div> <!-- .navbar.navbar-fixed-top -->
+    
+    <div class="top-bar-huge"></div>
+    <div class="main-container" id="content">
+        {% block content %}{% endblock %}
     </div>
-    <div class="container">
-        <div class="container">
-            <div class="row">
-                <div class="page-header">
-                    {% block header %}
-                    <h1>{{ url_name|capfirst }}</h1>
-                    {% endblock %}
-                </div> <!-- .page-header -->
-                <div id="content" class="span12">
-                    {% block content %}{% endblock %}
-                </div> <!-- .span10 -->
-            </div> <!-- .row -->
-
-        </div> <!-- #content.container -->
-        <div id="footer">{% block footer %}{% endblock %}</div> <!-- #footer -->
-    </div> <!-- .container -->
-
-
+    <div class="bottom-bar"></div>
+    
     {% compress js %}
     <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.2.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/lib/bootstrap.js' %}"></script>

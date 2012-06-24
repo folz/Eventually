@@ -1,0 +1,105 @@
+
+
+  div.cover-picture{
+    position:relative;
+    width:100%;
+    left:0;
+    top:0;
+    height:350px;
+    border: 1px solid black;
+    border-color:rgba(0, 0, 0, .25);
+    overflow: hidden;
+    background: url('../img/cover.jpg') no-repeat center center; 
+    -webkit-background-size: cover;
+  }
+
+  div.cover-button {
+    position: absolute;
+    top:250px;
+    right:30px;
+    display: none;
+  }
+
+  div.cover-picture:hover .cover-button{
+    display: inline;
+  }
+
+  span.uiButtonText {
+    padding: 4px 4px 4px 4px;
+    color:#333;
+    background-color:white;
+  }
+
+  div.navigation {
+    position:fixed;
+    bottom:0px;
+    right:18%;
+  }
+
+/*  --------------------------------------------------
+  Right-navigation
+  -------------------------------------------------- */
+  .navigation ul {
+    margin:0px;
+    background: #fff;
+    list-style:none;
+    padding:2px;
+    width:100px;
+
+  }
+
+  .navigation ul li{
+    background: #fff;
+    list-style:none;
+    text-align:left;
+    padding:3px;
+    padding-left:20px;
+    height:30px;
+    border-left:3px solid #999;
+    margin:2px;
+  }
+
+/*  --------------------------------------------------
+  Drop-down Menu
+  -------------------------------------------------- */
+
+
+
+
+/*  --------------------------------------------------
+  Upper Panels
+  -------------------------------------------------- */
+
+.panel {
+  background-color:#e5e4e4;
+  height: 220px;
+  top:60px;
+  zoom: 1;
+  filter: alpha(opacity=80);
+  opacity: 0.8;
+}
+
+/*  --------------------------------------------------
+  Calendar
+  -------------------------------------------------- */
+
+.calendar-canvas {
+  position:absolute;
+  top:90%;
+  width: 100%;
+  height: 100%;
+  background-color: #aadc2d;
+  overflow: hidden;
+}
+
+.calendar-container {
+  position: relative;
+  margin-top:90px;
+  margin-left: 5%;
+  margin-bottom:10px;
+  width: 90%;
+  height: 80%;
+  
+  background-color:#fff;
+  overflow: scroll;
+}

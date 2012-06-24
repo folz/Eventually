@@ -1,5 +1,12 @@
-{% extends "loggedin.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
+
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+
+{% endblock %}
+
 
 {% block extra_js %}
 
