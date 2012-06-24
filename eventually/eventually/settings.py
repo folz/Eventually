@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     
     #Third-party
+    'backbone_tastypie',
     'compressor',
     'registration',
     'south',
