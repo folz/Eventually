@@ -1,6 +1,14 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from tastypie.api import Api
+from events.api import *
+
+v1_api = Api(api_name='v1')
+v1_api.register(EventResource())
+v1_api.register(VenueResource())
+v1_api.register(SessionResource())
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -8,6 +16,11 @@ urlpatterns = patterns('',
     url(r'^$', 'events.views.home', name='home'),
     
     url(r'^event/(?P<eid>\d+)/', 'events.views.event', name='event'),
+    
+    
+    # API
+    
+    url(r'^api/', include(v1_api.urls)),
     
     
     # Django admin
