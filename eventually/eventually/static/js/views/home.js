@@ -1,6 +1,8 @@
 window.HomeView = Backbone.View.extend({
 
     initialize:function () {
+        $("body").attr("id", "landingPage");
+        
         this.searchResults = new EventCollection();
         this.searchresultsView = new EventListView({model: this.searchResults});
     },

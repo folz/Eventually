@@ -5,14 +5,6 @@ window.Router = Backbone.Router.extend({
         "events/:id": "eventDetails"
     },
 
-    initialize: function () {
-
-        // Close the search dropdown on click anywhere in the UI
-        $('body').click(function () {
-            $('.dropdown').removeClass("open");
-        });
-    },
-
     home: function () {
         $("#content").html(new HomeView().render().el);
     },
@@ -21,8 +13,6 @@ window.Router = Backbone.Router.extend({
         var event = new Event({id: id});
         event.fetch({
             success: function (data) {
-                // Note that we could also 'recycle' the same instance of EventFullView
-                // instead of creating new instances
                 $('#content').html(new EventView({model: data}).render().el);
             }
         });
@@ -30,7 +20,7 @@ window.Router = Backbone.Router.extend({
 
 });
 
-templateLoader.load(["HomeView", "EventView", "EventListItemView"],
+templateLoader.load(["HomeView", "EventView", "EventListItemView", "ManageView"],
     function () {
         app = new Router();
         Backbone.history.start();

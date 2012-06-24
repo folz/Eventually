@@ -146,6 +146,9 @@ AUTH_PROFILE_MODULE = 'eventually.UserProfile'
 
 ACCOUNT_ACTIVATION_DAYS = 3
 
+# TODO clowny
+API_LIMIT_PER_PAGE = 0
+
 DATABASES = {
     'default':
         dj_database_url.config(default='postgres://localhost')

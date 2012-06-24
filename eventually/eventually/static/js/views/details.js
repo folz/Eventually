@@ -2,6 +2,7 @@ window.EventView = Backbone.View.extend({
 
     initialize:function () {
         console.log("[EventView] initialize event", this.model.get('id'));
+        $("body").attr("id", "eventPage");
     },
 
     render: function () {

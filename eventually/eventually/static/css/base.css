@@ -217,7 +217,7 @@ body#eventPage div.cover-picture {
   border: 1px solid black;
   border-color: rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  background: url("../img/cover.jpg") no-repeat center center;
+  background: url("/static/img/cover.jpg") no-repeat center center;
   -webkit-background-size: cover;
 }
 /* line 15, ../scss/eventpage.scss */
@@ -519,7 +519,7 @@ body#landingPage .landingbg {
   height: 80%;
   padding-left: 10px;
   padding-right: 10px;
-  background-image: url("../img/landingbg.jpeg");
+  background-image: url("/static/img/landingbg.jpeg");
   -webkit-background-size: cover;
   width: 280px;
 }

@@ -1,3 +1,106 @@
-<div id="details">
-    <h2><%= name %></h2>
-</div>
+	<div class="top-bar"></div>
+	<div class="cover-picture">
+		<div class="main-container">
+			<div class="panel p_left top_box_karan">
+				<h1>AngelHack</h1>
+        <h2>June 23-24, 2012</h2>
+        <p>AOL, Pagemill Rd.<br />
+        Palo Alto, CA</p>
+        <img style="width: 100px; height: auto; zoom: 1.4" src='https://s3.amazonaws.com/hackathonio/sponsor_logos/4fcfcf26-de6c-4e22-a3cf-41ef0aa01775.jpg' />
+        <img style="width: 170px; height: auto; zoom: 1.4" src='https://s3.amazonaws.com/hackathonio/sponsor_logos/4fcd8fe2-b0a0-487f-8934-2a9b0aa01775.png' />
+			</div>
+		</div>
+	</div>
+	<div class="canvas" id="canvas">
+		<div class="main-container">
+
+      <div id="facebook" class="l_right">
+        <h2 class="subtitle">Your facebook friends</h2>
+        <div class="social_panel">
+        <div class="friend">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/260849_711362205_1700900173_n.jpg"/>
+          <h2>Rodney Folz</h2>
+          <p> is attending <a href="#">Sponsor Talks</a></p>
+        </div>
+        <div class="friend">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/260856_1198862000_867722134_n.jpg"/>
+          <h2>Karan Sikka</h2>
+          <p> is attending <a href="#">Lunch</a></p>
+        </div>
+        <div class="friend">
+          <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/41548_683821413_902569482_n.jpg"/>
+          <h2>Salem Hilal</h2>
+          <p> is attending <a href="#">Singly Office Hrs</a></p>
+        </div>
+          </div>
+      </div>
+      <div class="p_right hey">
+        <h2 class="subtitle">Twitter feed for #AngelHack</h2>
+        <div id="twitterfeed" class="social_panel">
+        </div>
+      </div>
+
+		</div>
+	</div>
+	<div class="calendar-canvas">
+		<div class="calendar-container">
+			<div id="single">
+			    <div id="events"></div>
+			</div>
+		</div>
+	</div>
+	<!--<footer></footer>-->
+
+	<script type="text/javascript" src="/static/js/ajaxhandle.js"></script>
+	<script type="text/javascript" src="/static/js/render.js"></script>
+	<script type="text/javascript" src="/static/js/events.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="/static/js/twitter.js"></script>
+
+    <!-- TODO clowny -->
+	<script>setTimeout(function() {
+		var input_arr = [{
+		        id: 1,
+            start: 0,
+            end: 60
+        }, {
+            id: 2,
+            start: 540,
+            end: 600
+        },{
+            id: 3,
+            start: 560,
+            end: 620
+        },{
+            id: 4,
+            start: 610,
+            end: 670
+        },{
+            id: 5,
+            start: 210,
+            end: 270
+        },{
+            id: 6,
+            start: 310,
+            end: 390
+        },{
+            id: 6,
+            start: 310,
+            end: 390
+        },{
+            id: 6,
+            start: 310,
+            end: 390
+        },{
+            id: 6,
+            start: 310,
+            end: 390
+        },{
+            id: 6,
+            start: 310,
+            end: 390
+        }];
+		
+		layOutDay(input_arr);}, 100);
+	</script>
