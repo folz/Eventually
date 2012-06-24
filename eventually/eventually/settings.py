@@ -71,6 +71,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 )
 
 # List of callables that know how to import templates from various sources.
@@ -101,6 +102,7 @@ TEMPLATE_DIRS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
+    # Django
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'django.core.context_processors.debug',
@@ -108,6 +110,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
+    
+    # Eventually
+    'eventually.context_processors.site',
+    'eventually.context_processors.url_name',
 )
 
 FIXTURE_DIRS = (
@@ -125,12 +131,17 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     
     #Third-party
+    'compressor',
     'registration',
     
     # Eventually
     'eventually',
     'events',
 )
+
+AUTH_PROFILE_MODULE = 'eventually.UserProfile'
+
+ACCOUNT_ACTIVATION_DAYS = 3
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
